@@ -1,7 +1,6 @@
 import datetime
 import os
 import re
-import time
 from pathlib import Path
 from dotenv import load_dotenv
 import requests
@@ -56,8 +55,8 @@ if __name__ == '__main__':
 
         content = (
             f"---\n"
-            f"title: {r['title']}\n"
-            f"url: {r['url']}\n"
+            f"title: \"{r['title']}\"\n"
+            f"url: \"{r['url']}\"\n"
             f"scraped_at: {today}\n"
             f"---\n\n"
             f"{r['markdown']}"

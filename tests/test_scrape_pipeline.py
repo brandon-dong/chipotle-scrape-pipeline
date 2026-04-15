@@ -23,7 +23,6 @@ def test_slug_handles_http():
 
 import datetime
 from pathlib import Path
-from unittest.mock import patch
 
 
 def _make_result(title, url, markdown):
