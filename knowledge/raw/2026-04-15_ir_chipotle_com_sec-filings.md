@@ -1,7 +1,7 @@
 ---
-title: SEC Filings - Chipotle Mexican Grill
-url: https://ir.chipotle.com/sec-filings
-scraped_at: 2026-04-15
+title: "SEC Filings - Chipotle Mexican Grill"
+url: "https://ir.chipotle.com/sec-filings"
+scraped_at: "2026-04-15"
 ---
 
 ### Your Privacy Preferences

@@ -1,7 +1,7 @@
 ---
-title: Chipotle InvestorRoom - Home
-url: https://ir.chipotle.com/
-scraped_at: 2026-04-15
+title: "Chipotle InvestorRoom - Home"
+url: "https://ir.chipotle.com/"
+scraped_at: "2026-04-15"
 ---
 
 # Home

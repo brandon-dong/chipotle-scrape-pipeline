@@ -1,7 +1,7 @@
 ---
-title: News Releases - Chipotle Mexican Grill
-url: https://ir.chipotle.com/Financial-Releases
-scraped_at: 2026-04-15
+title: "News Releases - Chipotle Mexican Grill"
+url: "https://ir.chipotle.com/Financial-Releases"
+scraped_at: "2026-04-15"
 ---
 
 ### Your Privacy Preferences
