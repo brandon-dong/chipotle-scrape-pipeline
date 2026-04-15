@@ -18,8 +18,6 @@ if __name__ == '__main__':
 
     api_key = os.getenv("FIRECRAWL_API_KEY")
 
-    # --- Step 01: Search + scrape with Firecrawl ---
-
     api_url = "https://api.firecrawl.dev/v2/search"
 
     headers = {
@@ -36,9 +34,33 @@ if __name__ == '__main__':
 
     data = response.json()
     results = data["data"]["web"]
+
+    today = datetime.date.today().isoformat()
+    out_dir = Path("knowledge/raw")
+    out_dir.mkdir(parents=True, exist_ok=True)
+
     print(f"Firecrawl returned {len(results)} results")
 
     for r in results:
-        print(f"  - {r['title']}")
-        print(f"    {r['url']}")
-        print(f"    markdown length: {len(r.get('markdown') or '')} chars")
+        slug = url_to_slug(r["url"])
+        filename = f"{today}_{slug}.md"
+        filepath = out_dir / filename
+
+        if not r.get("markdown"):
+            print(f"  [no content] {filename}")
+            continue
+
+        if filepath.exists():
+            print(f"  [skipped] {filename}")
+            continue
+
+        content = (
+            f"---\n"
+            f"title: {r['title']}\n"
+            f"url: {r['url']}\n"
+            f"scraped_at: {today}\n"
+            f"---\n\n"
+            f"{r['markdown']}"
+        )
+        filepath.write_text(content, encoding="utf-8")
+        print(f"  [saved] {filename}")
